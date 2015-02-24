@@ -1,0 +1,209 @@
+
+<!doctype html>
+<html>
+<! 
+ ________   ________    ________   ________   _______    ___       __         ___  ___     
+|\   __  \ |\   ___  \ |\   ___ \ |\   __  \ |\  ___ \  |\  \     |\  \      |\  \|\  \    
+\ \  \|\  \\ \  \\ \  \\ \  \_|\ \\ \  \|\  \\ \   __/| \ \  \    \ \  \     \ \  \\\  \   
+ \ \   __  \\ \  \\ \  \\ \  \ \\ \\ \   _  _\\ \  \_|/__\ \  \  __\ \  \     \ \   __  \  
+  \ \  \ \  \\ \  \\ \  \\ \  \_\\ \\ \  \\  \|\ \  \_|\ \\ \  \|\__\_\  \  ___\ \  \ \  \ 
+   \ \__\ \__\\ \__\\ \__\\ \_______\\ \__\\ _\ \ \_______\\ \____________\|\__\\ \__\ \__\
+    \|__|\|__| \|__| \|__| \|_______| \|__|\|__| \|_______| \|____________|\|__| \|__|\|__|  
+    Danny Boy Calling Broad Sword....Danny Boy Calling Broad Sword....Danny Boy Calling Broad Sword....                                                                                                                                                                       >                                                                                                                                                                                                                                                                                                                                                        
+<head>
+  <title id="ContextTitle">Home</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#FA3854">
+  
+  <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="/bower_components/core-scaffold/core-scaffold.html">
+  <link rel="import" href="/bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+  <link rel="import" href="/bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="/bower_components/core-menu/core-menu.html">
+  <link rel="import" href="/bower_components/core-menu/core-submenu.html">
+  <link rel="import" href="/bower_components/core-item/core-item.html">
+  <link rel="import" href="/bower_components/core-icons/social-icons.html">
+  <link rel="import" href="/bower_components/core-icon/core-icon.html">
+  <link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="/bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="/bower_components/paper-button/paper-button.html">
+  <link rel="import" href="/bower_components/paper-shadow/paper-shadow.html">
+  <link rel="import" href="/assets/post-card.html">
+ 
+  
+  
+	
+ 
+	     
+  
+  
+  
+  <style>
+  
+	#HomeButton{
+		float: right;
+		padding-top: 10px;
+	}
+	a {
+		color:black;
+		text-decoration: none;
+	}
+    html, body {
+      height: 100%;
+      margin: 0;
+      
+    }
+  
+    body {
+      font-family: sans-serif;
+    }
+    
+    core-scaffold {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .content {
+      background-color: #fff;
+      height: 5000px;
+      padding: 20px;
+    }
+    
+    /* some default styles for mode="cover" on core-scaffold */
+    core-scaffold[mode=cover]::shadow core-header-panel::shadow #mainContainer {
+      left: 120px;
+    }
+    
+    core-scaffold[mode=cover] .content {
+      margin: 20px 100px 20px 0;
+    }
+    
+  </style>
+  
+</head>
+
+<body unresolved>
+
+  <core-scaffold style="hidden">
+  
+    <core-header-panel navigation flex mode="seamed" >
+      <core-toolbar style="background-color: #FA3854; color:#FFF ;">
+      <core-icon src="/assets/abdz-black.svg" style="height:60px; width:260px;"></core-icon>
+      </core-toolbar>
+      <core-menu>
+      <core-submenu icon="social:school" label="Exams">
+      
+        <core-item onClick="SchoolMath()" label="Math"></core-item></a>
+        <core-item onClick="SchoolChemistry()" label="Chemistry"></core-item></a>
+        <core-item onClick="SchoolEnglish()" label="English"></core-item></a>
+        <core-item onClick="SchoolHistory()" label="History"></core-item></a>
+        <core-item onClick="SchoolSpanish()" label="Spanish"></core-item></a>
+        <core-item onClick="SchoolProgramming()" label="Programming"></core-item></a>
+        
+      </core-submenu>
+      
+      <core-submenu icon="social:post-github" label="Github/Code">
+      
+        <core-item onClick="CodeGithub()" label="Github"></core-item></a>
+        <core-item onClick="CodeCode()" label="Code"></core-item></a>
+        <core-item onClick="CodeSoftwareProjects()" label="Software Projects"></core-item></a>
+        
+      </core-submenu>
+      
+      <core-submenu icon="work" label="Projects">
+      
+        <core-item onClick="ProjectsArduino()" label="Arduino"></core-item></a>
+        <core-item onClick="ProjectsUdoo()" label="Udoo"></core-item></a>
+        <core-item onClick="ProjectsRaspberryPi()" label="Raspberry Pi"></core-item></a>
+        <core-item onClick="ProjectsLongTerm()" label="Long Term"></core-item></a>
+        <core-item onClick="ProjectsArt()" label="Art"></core-item></a>
+        <core-item onClick="ProjectsVisualTechnology()" label="Visual/Technology"></core-item></a>
+        
+      </core-submenu>
+      
+      <core-submenu icon="help" label="Repairs">
+      
+        <core-item label="Apple Products" onClick="RepairsAppleProducts()"></core-item></a>
+        <core-item label="Iphone" onClick="RepairsIphone()"></core-item></a>
+        <core-item label="Hardware Setup" onClick="RepairsHardwareSetup()"></core-item></a>
+        <core-item label="Web Design" onClick="RepairsWebDesign()"></core-item></a>
+        <core-item label="E-Commerce" onClick="RepairsECommerce()"></core-item></a>
+        
+      </core-submenu>
+      
+      <core-submenu icon="social:whatshot" label="Updates">
+      
+      <core-item label="School" onClick="UpdatesSchool()"></core-item>
+      <core-item label="Github/Code" onClick="UpdatesGithubCode()"></core-item>
+      <core-item label="Projects" onClick="UpdatesProjects()"></core-item>
+      <core-item label="Repairs" onClick="UpdatesRepairs()"></core-item>
+      <core-item label="Web-Design" onClick="UpdatesWebDesign()"></core-item>
+        
+      </core-submenu>
+     
+   
+        
+      </core-menu>
+    </core-header-panel>
+    
+<div tool>
+<paper-icon-button icon="home" onClick="Home()"></paper-icon-button>
+<span flex id="HomeButton">Home</span>
+</div>
+    <script src="assets/ContextInfo.js"></script>
+    <div class="content" id="InnerContent">
+    </div>
+  
+  </core-scaffold>
+  
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48611724-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('9356-358-10-9968');/*]]>*/</script><noscript><a href="https://www.olark.com/site/9356-358-10-9968/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
+
+<script type='text/javascript'>
+window.__wtw_lucky_site_id = 31608;
+
+	(function() {
+		var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+		wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+	  })();
+</script>
+
+</body>
+</html>

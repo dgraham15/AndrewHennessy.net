@@ -1,0 +1,98 @@
+<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">requests</span>
+<span style="color: #888888">#Library for Post Get and Put Requests</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">json</span>
+<span style="color: #888888">#Handels Data</span>
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">__builtin__</span> <span style="color: #008800; font-weight: bold">import</span> <span style="color: #007020">raw_input</span>
+<span style="color: #888888">#Auto IMport thanks eclipse</span>
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">initiate</span>():
+    <span style="color: #888888">#initiate() creates a url with some &quot;data&quot; </span>
+    headers <span style="color: #333333">=</span> {<span style="background-color: #fff0f0">&#39;content-type&#39;</span>: <span style="background-color: #fff0f0">&#39;application/json&#39;</span>}
+    <span style="color: #888888">#headers make everything smoothe</span>
+    data<span style="color: #333333">=</span>json<span style="color: #333333">.</span>dumps({<span style="background-color: #fff0f0">&quot;Data&quot;</span>:[]})
+    <span style="color: #888888">#dump that data with zero list</span>
+    r <span style="color: #333333">=</span> requests<span style="color: #333333">.</span>post(<span style="background-color: #fff0f0">&quot;https://api.myjson.com/bins&quot;</span>, data,headers)
+    <span style="color: #888888">#awsome website stores json data </span>
+    decoded <span style="color: #333333">=</span> r<span style="color: #333333">.</span>json()
+    <span style="color: #888888">#it returns an enocded url of were the data is sitting Return it to use in other functions or just call it to start a new data instance. </span>
+    <span style="color: #008800; font-weight: bold">return</span> decoded[<span style="background-color: #fff0f0">&quot;uri&quot;</span>]
+
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">getdata</span>(elements):
+    data <span style="color: #333333">=</span> []
+    <span style="color: #888888">#get data but first make a list.</span>
+    <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(elements):
+        <span style="color: #888888">#we ask the programmer how many data objects are their. For each one we then ask okay whats the data. </span>
+        input_element <span style="color: #333333">=</span> <span style="color: #007020">raw_input</span>(<span style="background-color: #fff0f0">&quot;Data: &quot;</span>)
+        data<span style="color: #333333">.</span>append(input_element)
+    <span style="color: #008800; font-weight: bold">return</span> data
+    <span style="color: #888888">#return the data in hopes of using it to update(Put) or create data instance (POST)</span>
+ 
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">update</span>():
+    <span style="color: #888888">#This will update an existing data instance</span>
+    andrew<span style="color: #333333">=</span>getdata(<span style="color: #0000DD; font-weight: bold">10</span>)
+    <span style="color: #888888"># we want data so we call the data function and how many pieces as the argument. </span>
+    payload <span style="color: #333333">=</span> {<span style="background-color: #fff0f0">&quot;Command&quot;</span>:andrew}
+    <span style="color: #888888">#the payload is the command object with its dict or list andrew which is the getdata(10) thing</span>
+    headers <span style="color: #333333">=</span> {<span style="background-color: #fff0f0">&#39;content-type&#39;</span>: <span style="background-color: #fff0f0">&#39;application/json&#39;</span>}
+    <span style="color: #888888"># headers make everything smoother</span>
+    bob <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;https://api.myjson.com/bins/1hdk7&quot;</span>
+    <span style="color: #888888">#bob = initiate()</span>
+    <span style="color: #888888">#this will create new data instance but you can update if you want you will have to define urls in public vars so that your program doesn&#39;t make new instances update is called</span>
+    r <span style="color: #333333">=</span> requests<span style="color: #333333">.</span>put(bob,data<span style="color: #333333">=</span>json<span style="color: #333333">.</span>dumps(payload),headers <span style="color: #333333">=</span> headers)
+    <span style="color: #888888">#we ask requests to make a new object r with the mehtod put and pass in the url the data and the headers</span>
+    decoded <span style="color: #333333">=</span> json<span style="color: #333333">.</span>dumps(r<span style="color: #333333">.</span>json())
+    <span style="color: #888888">#this returns the data that was updated</span>
+    <span style="color: #008800; font-weight: bold">print</span>(decoded)
+    <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;At &quot;</span><span style="color: #333333">+</span>bob)
+    <span style="color: #888888">#this prints were the data is</span>
+<span style="color: #888888">#You will Have to Copy in Url or Prebuild and import</span>
+update()
+<span style="color: #888888"># we call update to start the whole process. </span>
+</pre></td></tr></table></div>
